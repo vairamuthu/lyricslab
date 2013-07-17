@@ -8,7 +8,290 @@
 </head>
 <body>
 
-<%= yield %>
+        <!-- Primary Page Layout 
+        ================================================== -->
 
-</body>
+        <!-- header -->
+        <header id="mainHeader" class="clearfix">
+
+
+            <div class="navbar navbar-fixed-top">
+                <div class="navbar-inner">
+                    <div class="container">
+
+                        <a href="index-2.html" class="brand"><img src="images/main-logo.png" alt="himalaya"/></a>
+
+
+                        <nav id="mainMenu" class="clearfix">
+                            <ul>
+                                <li><a href="index-2.html" class="firstLevel active" >Home</a>
+                                    <ul>
+                                        <li><a href="index-2.html">Revolution Slider 1</a></li>
+                                        <li><a href="home1.html">Revolution Slider 2</a></li>
+                                        <li><a href="home2.html">Camera Slider</a></li>
+                                        <li><a href="home3.html">Flexi Slider</a></li>
+                                        <li><a href="home4.html">No Slider Video</a></li>
+                                        <li><a href="home5.html">No Slider Portfolio</a></li>
+                                        <li><a href="home6.html" class="last">No Slider</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                <li><a href="#" class="firstLevel">Colors</a>
+                                    <ul>
+                                        <li><a href="#" class="hasSubMenu">Light background</a>
+                                            <ul class="switcher">
+                                                <li><a href="css/orange.css">Orange</a></li>
+                                                <li><a href="css/yellow.css">Yellow</a></li>
+                                                <li><a href="css/sea-green.css">Sea green</a></li>
+                                                <li><a href="css/green.css">Green</a></li>
+                                                <li><a href="css/blue.css">Dark blue</a></li>
+                                                <li><a href="css/light.css">Light blue</a></li>
+                                                <li><a href="css/pink.css">Pink</a></li>
+                                                <li><a href="css/coffee.css">Coffee</a></li>
+                                                <li><a href="css/red.css">Red</a></li>
+                                                <li><a href="css/black-white.css">Black & white</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#" class="hasSubMenu last">Dark background</a>
+                                            <ul class="switcher">
+                                                <li><a href="css/dark-orange.css">Dark Orange</a></li>
+                                                <li><a href="css/dark-yellow.css">Dark Yellow</a></li>
+                                                <li><a href="css/dark-sea-green.css">Dark Sea green</a></li>
+                                                <li><a href="css/dark-green.css">Dark Green</a></li>
+                                                <li><a href="css/dark-blue.css">Dark Dark blue</a></li>
+                                                <li><a href="css/dark-light.css">Dark Light blue</a></li>
+                                                <li><a href="css/dark-pink.css">Dark Pink</a></li>
+                                                <li><a href="css/dark-coffee.css">Dark Coffee</a></li>
+                                                <li><a href="css/dark-red.css">Dark Red</a></li>
+                                                <li><a href="css/dark-black-white.css" class="last">Dark Black & white</a></li>
+                                            </ul>   
+                                        </li>
+                                    </ul>
+                                </li>
+
+
+                                <li><a href="template-features.html" class="firstLevel">Features</a></li>
+
+
+                                <li><a href="template-columns.html" class="firstLevel">Templates</a>
+                                    <ul >
+                                        <li><a href="template-columns.html">Columns</a></li>
+                                        <li><a href="template-typography.html">Typography</a></li>
+                                        <li><a href="template-sidebar.html">Sidebar</a></li>
+                                        <li><a href="template-faq.html">FAQ</a></li>
+                                        <li><a href="template-404.html">404 error</a></li>
+                                        <li><a href="template-our-team.html">Our team</a></li>
+                                        <li><a href="template-pricing.html">Pricing table</a></li>
+                                        <li><a href="template-full-width.html">Full width</a></li>
+                                        <li><a href="#" class="hasSubMenu last">Sub menu</a>
+                                            <ul>
+                                                <li><a href="#" class="">Third level 1</a></li>
+                                                <li><a href="#" class="">Third level 2</a></li>
+                                                <li><a href="#" class="">Third level 3</a></li>
+                                                <li>
+                                                    <a href="#" class="hasSubMenu last">Third level 4</a>
+                                                    <ul>
+                                                        <li><a href="#" class="">Fourth level 1</a></li>
+                                                        <li><a href="#" class="">Fourth level 2</a></li>
+                                                        <li><a href="#" class="last">Fourth level 3</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="portfolio-vertical.html" class="firstLevel">Portfolio</a>
+                                    <ul>
+                                        <li><a href="portfolio-vertical.html">Vertical</a></li>
+                                        <li><a href="portfolio-masonery.html">Masonery</a></li>
+                                        <li><a href="portfolio-2columns.html">2 columns</a></li>
+                                        <li><a href="portfolio-3columns.html">3 columns</a></li>
+                                        <li><a href="portfolio-4columns.html">4 columns</a></li>
+                                        <li><a href="portfolio-project.html" class="last">Single project</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="blog-home.html" class="firstLevel">Blog</a>
+                                    <ul>
+                                        <li><a href="blog-home.html">Homepage</a></li>
+                                        <li><a href="blog-post.html" class="last">Post</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                	<%= link_to "Sign In / Sign Up", new_user_session_path%>
+                                    
+                                    <ul>
+                                        <li><a href="template-contact.html" class="last">Contact template 1</a></li>
+                                        <li><a href="template-contact-2.html" class="last">Contact template 2</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header --> 
+
+
+        <!-- globalWrapper --> 
+        <div id="globalWrapper"> 
+
+
+          <section  id="sliderWrapperRS">
+                <!-- background slider dark bloc -->
+                <div id="bgSliderBlocWrapper">
+                    <div class="container">
+                        <div id="bgSliderBloc">&nbsp;</div>
+                    </div>
+                </div>
+
+
+
+           </section> 
+           
+           
+           <section id="content" class="home">
+
+                <!-- three blocs -->
+                <section class="sliceTop"> 
+
+                    <div class="container">
+
+                        <div class="row">
+                            <div class="span12 drop-shadow lifted">
+
+                                <div class="topQuote">
+                                    <h1>
+                                        Welcome to <strong>OHMy! Website Template</strong>, clean, HTML5 & CSS3, and Fully Responsive.<span> Build your website in no time!</span>
+                                    </h1>
+                                </div>
+                                <div class="topBox clearfix">
+                                    <div class="bigIconsColumnsWrapper">
+										<article style="margin-left: auto;margin-right: auto;position: relative; padding-left: 30%;padding-right: 30%">
+										<%= yield%>
+                                        </article>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section> 
+                <!-- three blocs -->
+
+            <!-- content -->
+
+            <!-- footer -->
+            <footer class="footer1">
+                <div class="container" id="footer">
+                    <div class="row">
+                        <div class="span3 testimonialWidget">
+                            <h2>Testimonial</h2>
+                            <div class="divider"><span></span></div>
+                            <p>Little Neko is a web design and development studio.<br />
+                                We build responsive HTML5 and CSS3 templates, integrating best web design practises and up-to-date web technologies to create great user experiences. We love what we do and we hope you too ! </p>
+                        </div>
+                        <div class="span3 tweetWidget">
+                            <h2>Latest tweets</h2>
+                            <div class="divider"><span></span></div>
+                            <div class="tweet"></div>
+                        </div>
+
+
+                        <div class="span3 contactWidget">
+                            <h2>Contact us</h2>
+                            <div class="divider"><span></span></div>
+                            <address>
+                                <strong>Little NEKO</strong>
+                                <p>
+                                    <i class="icon-location"></i>&nbsp;77 Mass. Ave., E14/E15<br/>
+                                    Cambridge, MA 02139-4307 USA
+                                </p>
+                                <p>
+                                    <i class="icon-phone"></i>&nbsp;615.987.1234
+                                </p>
+                                <p>
+                                    <i class="icon-mail-alt"></i>&nbsp;<a href="mailto:little@little-neko.com">little@little-neko.com</a>
+                                </p>
+                            </address>
+                        </div>
+
+
+                        <div class="span3 sociallWidget">
+                            <h2>Follow us</h2>
+                            <div class="divider"><span></span></div>
+                            <ul class="socialNetwork nav">
+                                <li><a href="#" class="icon-rss socialIcon tips"  title="Our rss feed"><span>rss feed</span></a></li>
+                                <li><a href="#" class="icon-facebook socialIcon tips"  title="follow us on Facebook"><span>facebook</span></a></li>
+                                <li><a href="#" class="icon-twitter-bird socialIcon tips"  title="follow us on Twitter"><span>twitter</span></a></li>
+                                <li><a href="#" class="icon-gplus socialIcon tips"  title="follow us on Google +"><span>google +</span></a></li>
+                                <li><a href="#" class="icon-instagram socialIcon tips"  title="follow us on Instagram"><span>instagram</span></a></li>
+                                <li><a href="#" class="icon-linkedin socialIcon tips"  title="follow us on Linkedin"><span>linkedin</span></a></li>
+                                <li><a href="#" class="icon-pinterest-circled socialIcon tips"  title="follow us on Pinterest"><span>Pinterest</span></a></li>
+                            </ul>
+
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed lectus in turpis consequat pharetra. Nulla velit purus, vestibulum sit amet ultrices eget, ultricies ut massa. Cras ac nulla at arcu vehicula hendrerit. </p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+            <footer class="footer2" id="footerRights">
+                <div class="container">
+                    <div class="row">
+                        <div class="span12">
+                            <p>Copyright © 2012 Little NEKO / All rights reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- footer -->
+
+        </div>
+        <!-- Global wrapper -->
+
+        <!-- End Document 
+        ================================================== -->
+
+        <script type="text/javascript" src="js-plugin/respond/respond.min.js"></script>
+        <script type="text/javascript" src="../ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script type="text/javascript" src="js-plugin/jquery-ui/jquery-ui-1.8.23.custom.min.js"></script>
+
+
+        <!-- third party plugins  -->
+        <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+        <script type="text/javascript" src="bootstrap/js/bootstrap-carousel.js"></script>
+        <script type="text/javascript" src="js-plugin/easing/jquery.easing.1.3.js"></script>
+        <script type="text/javascript" src="js-plugin/pretty-photo/js/jquery.prettyPhoto.js"></script>
+        <script type="text/javascript" src="js-plugin/jquery-validation/jquery.validate.html"></script>
+        <script type="text/javascript" src="js-plugin/jquery-cookie/jquery.cookie.js"></script>
+        <script type="text/javascript" src="js-plugin/seaofclouds-tweet/tweet/jquery.tweet.js"></script>
+        <script type="text/javascript" src="js-plugin/hoverdir/jquery.hoverdir.js"></script>
+
+        <!-- jQuery KenBurn Slider  -->
+        <script type="text/javascript" src="js-plugin/rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
+        <script type="text/javascript" src="js-plugin/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+
+        <!-- Custom  -->
+        <script type="text/javascript" src="js/custom.js"></script>
+
+        <script type="text/javascript">
+
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', UA]);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+
+        </script>
+
+
+        
+    </body>
+
+
 </html>
