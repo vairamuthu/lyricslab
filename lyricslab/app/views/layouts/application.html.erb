@@ -117,8 +117,19 @@
                                     </ul>
                                 </li>
                                 <li>
+                                	
+                                	<% if !user_signed_in?%>
                                 	<%= link_to "Sign In / Sign Up", new_user_session_path%>
-                                    
+                                	<% unless current_user %>
+	<%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
+<% else %>
+	<h1>Welcome <%= current_user.name %></h1>
+
+	<%= link_to "Logout", destroy_user_session_path, :method => :delete %>
+<% end %>
+                                    <% else%>
+                                    <%=link_to("Logout", destroy_user_session_path, :method => :delete) %>
+                                    <% end %>
                                     <ul>
                                         <li><a href="template-contact.html" class="last">Contact template 1</a></li>
                                         <li><a href="template-contact-2.html" class="last">Contact template 2</a></li>
@@ -134,15 +145,27 @@
         <!-- header --> 
 
 
+
         <!-- globalWrapper --> 
         <div id="globalWrapper"> 
 
-
           <section  id="sliderWrapperRS">
                 <!-- background slider dark bloc -->
-                <div id="bgSliderBlocWrapper">
+               
+                
+		          <div id="bgSliderBlocWrapper">
                     <div class="container">
-                        <div id="bgSliderBloc">&nbsp;</div>
+                        <div id="bgSliderBloc">&nbsp;
+                        	<% [:notice, :error, :alert].each do |level| %>
+  					<% unless flash[level].blank? %>
+    					<div class="alert  alert-<%= flash_class(level) %>">
+      					<a href="#" class="close" data-dismiss="alert">&times;</a>
+      						<%= flash[level] %>
+							    </div>
+							  <% end %>
+							<% end %>
+                        	</div>
+                        	
                     </div>
                 </div>
 
@@ -161,11 +184,7 @@
                         <div class="row">
                             <div class="span12 drop-shadow lifted">
 
-                                <div class="topQuote">
-                                    <h1>
-                                        Welcome to <strong>OHMy! Website Template</strong>, clean, HTML5 & CSS3, and Fully Responsive.<span> Build your website in no time!</span>
-                                    </h1>
-                                </div>
+                                
                                 <div class="topBox clearfix">
                                     <div class="bigIconsColumnsWrapper">
 										<article style="margin-left: auto;margin-right: auto;position: relative; padding-left: 30%;padding-right: 30%">
