@@ -20,48 +20,9 @@
                     <div class="container">
 
                         <a href="index-2.html" class="brand"><img src="images/main-logo.png" alt="himalaya"/></a>
+							<%= render :partial => "layouts/menu"%>
 
-
-                        <nav id="mainMenu" class="clearfix">
-                            <ul>
-                                <li><a href="index-2.html" class="firstLevel active" >Home</a>
-                                    
-                                </li>
-                                <li>
-                                <li><a href="#" class="firstLevel">Colors</a>
-                                    
-                                </li>
-
-
-                                <li><a href="template-features.html" class="firstLevel">Features</a></li>
-
-
-                                <li><a href="template-columns.html" class="firstLevel">Templates</a>
-                                    
-                                </li>
-                                <li><a href="portfolio-vertical.html" class="firstLevel">Portfolio</a>
-                                    
-                                </li>
-                                <li><a href="blog-home.html" class="firstLevel">Blog</a>
-                                    
-                                </li>
-                                <li>
-                                	
-                                	<% if !user_signed_in?%>
-                                	<%= link_to "Sign In / Sign Up", new_user_session_path%>
-                                	<%#= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
-	
-                         <% else%>
-                                    <%=link_to("Logout", destroy_user_session_path, :method => :delete) %>
-                                    <% end %>
-                                    
-                                </li>
-                               
-                                    
-                                
-                            </ul>
-                        </nav>
-
+                       
                     </div>
                 </div>
             </div>
@@ -72,15 +33,7 @@
 
         <!-- globalWrapper --> 
         <div id="globalWrapper"> 
-
-          <section  id="sliderWrapperRS">
-                <!-- background slider dark bloc -->
-               
-                
-		          <div id="bgSliderBlocWrapper">
-                    <div class="container">
-                        <div id="bgSliderBloc">&nbsp;
-                        	<% [:notice, :error, :alert].each do |level| %>
+<% [:notice, :error, :alert].each do |level| %>
   					<% unless flash[level].blank? %>
     					<div class="alert  alert-<%= flash_class(level) %>">
       					<a href="#" class="close" data-dismiss="alert">&times;</a>
@@ -88,6 +41,14 @@
 							    </div>
 							  <% end %>
 							<% end %>
+          <section  id="sliderWrapperRS">
+                <!-- background slider dark bloc -->
+               
+                
+		          <div id="bgSliderBlocWrapper">
+                    <div class="container">
+                        <div id="bgSliderBloc">&nbsp;
+                        	
                         	</div>
                         	
                     </div>
@@ -101,25 +62,7 @@
            <section id="content" class="home">
 
                 <!-- three blocs -->
-                <section class="sliceTop"> 
-
-                    <div class="container">
-
-                        <div class="row">
-                            <div class="span12 drop-shadow lifted">
-
-                                
-                                <div class="topBox clearfix">
-                                    <div class="bigIconsColumnsWrapper">
-										<article style="margin-left: auto;margin-right: auto;position: relative; padding-left: 30%;padding-right: 30%">
-										<%= yield%>
-                                        </article>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section> 
+                <%= yield%>
                 <!-- three blocs -->
 
             <!-- content -->
@@ -196,28 +139,7 @@
         <!-- End Document 
         ================================================== -->
 
-        <script type="text/javascript" src="js-plugin/respond/respond.min.js"></script>
-        <script type="text/javascript" src="../ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-        <script type="text/javascript" src="js-plugin/jquery-ui/jquery-ui-1.8.23.custom.min.js"></script>
-
-
-        <!-- third party plugins  -->
-        <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
-        <script type="text/javascript" src="bootstrap/js/bootstrap-carousel.js"></script>
-        <script type="text/javascript" src="js-plugin/easing/jquery.easing.1.3.js"></script>
-        <script type="text/javascript" src="js-plugin/pretty-photo/js/jquery.prettyPhoto.js"></script>
-        <script type="text/javascript" src="js-plugin/jquery-validation/jquery.validate.html"></script>
-        <script type="text/javascript" src="js-plugin/jquery-cookie/jquery.cookie.js"></script>
-        <script type="text/javascript" src="js-plugin/seaofclouds-tweet/tweet/jquery.tweet.js"></script>
-        <script type="text/javascript" src="js-plugin/hoverdir/jquery.hoverdir.js"></script>
-
-        <!-- jQuery KenBurn Slider  -->
-        <script type="text/javascript" src="js-plugin/rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
-        <script type="text/javascript" src="js-plugin/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
-
-        <!-- Custom  -->
-        <script type="text/javascript" src="js/custom.js"></script>
-
+       
         <script type="text/javascript">
 
             var _gaq = _gaq || [];
