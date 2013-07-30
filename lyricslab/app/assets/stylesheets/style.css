@@ -1,9 +1,13 @@
+
 .da-thumbs {
     position: relative;
+    
 }
 
 .da-thumbs article {
     position: relative;
+    padding-left: 10% !important; 
+    padding-right: 10% !important; 
 }
 
 .da-thumbs article a,

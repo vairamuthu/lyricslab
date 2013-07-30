@@ -1,0 +1,53 @@
+<section class="sliceTop"> 
+                    <div class="container">
+                        <div class="row">
+                            <div class="span12 drop-shadow lifted">
+								<div class="topQuote">
+									<div style="float: left">
+									<h1>
+									<strong>Menus</strong>															
+									</h1></div>	
+                                
+                                </div>
+                                <div style="float: right; padding: 10px"><a class="btn btn-info" href="menus/new"><i class="icon-plus"> </i>Add Menu</a> </div>
+                                <div class="topBox clearfix">
+                                    <div class="bigIconsColumnsWrapper">
+										<article style="margin-left: auto;margin-right: auto;position: relative; padding-left: 30%;padding-right: 30%">
+											<table class="table table-striped table-bordered">
+												<thead>
+													<th> S.No </th>
+													<th> Name </th>
+													<th> URL</th>
+													<th> Goto Link</th>
+													<th> Functions </th>
+												</thead>
+												<tbody>
+													<% if !@menus.empty?%>
+													<% count = 0%>
+													<% @menus.each do |menu|%>	
+														<tr>
+															<td><%= count +1%></td>
+															<td><%= menu.name%></td>
+															<td><%= menu.url%></td>
+															<td><%=link_to "Click", "#{menu.url}"%></td>
+															<td><%= link_to raw("<i class=\"icon-edit\"> </i>Edit"), edit_menu_path(menu), :class => "firstLevel"%> | 
+																<%= link_to raw("<i =\"icon-trash\"> </i>Delete"), role_path(menu), :method => :delete , :confirm => "Are You Sure?", :class => "firstLevel"%>
+																</td>
+																
+															  </tr>
+															  <%count +=1 %>
+													<%end%>
+													<%else%>
+													<tr>
+														<td colspan="5"> No Records</td>
+													</tr>
+													<% end %>
+												</tbody>
+												</table>
+                                        </article>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section> 

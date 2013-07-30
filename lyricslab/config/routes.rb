@@ -19,7 +19,7 @@ Lyricslab::Application.routes.draw do
    root 'home#home'
    resources :menus
    resources :roles
-   
+   resources :languages
   
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

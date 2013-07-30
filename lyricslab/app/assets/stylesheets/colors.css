@@ -441,8 +441,9 @@ nav.navigate a:hover {
 
 /*********************** MISCELANIOUS ***********************/
 .headerPage, .bgNoSlider, .bgSlider, #sliderWrapperRS, #blogHeader {
-
-    background:url(../images/textures/Little-Neko-_0003_BOKEY-blue-green-light.jpg) #EDEDED center top;
+	
+	background:url(../assets/textures/Little-Neko-_0003_BOKEY-blue-green-light.jpg) center top;
+    
 }
 #videoWrapper{background:url(../images/textures/bg-texture-video.png) no-repeat #222;}
 .focus {
