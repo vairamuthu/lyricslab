@@ -2,8 +2,12 @@ class LanguagesController < ApplicationController
   
   def index
     @languages = Language.paginate(:page => params[:page], :per_page => 10, :order => "name asc")
-    @count = (params[:page].to_i - 1) * 10
+    @count.nil? ? @count = 0 : @count = (params[:page].to_i - 1) * 10 
   end 
+  
+  def show
+    @language = Language.find(params[:id])
+  end
   
   def new
     @language = Language.new
