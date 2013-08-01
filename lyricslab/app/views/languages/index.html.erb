@@ -27,10 +27,11 @@
 													<% @languages.each do |lang|%>	
 														<tr>
 															<td><%= @count +1%></td>
-															<td><%=link_to "#{lang.name}", language_path(lang)%></td>
+															<td><%= lang.name%></td>
 															<td><%= lang.short_name%></td>
 															<td><%= lang.code%></td>
-															<td><%= link_to raw("<i class=\"icon-edits\"> </i>Edit"), edit_language_path(lang), :class => "firstLevel"%> | 
+															<td><%= link_to "Show", language_path(lang), :class => "firstLevel"%> |
+																<%= link_to raw("<i class=\"icon-edits\"> </i>Edit"), edit_language_path(lang), :class => "firstLevel"%> | 
 																<%= link_to raw("<i =\"icon-trash\"> </i>Delete"), language_path(lang), :method => :delete , :confirm => "Are You Sure?", :class => "firstLevel"%>
 																</td>
 																
