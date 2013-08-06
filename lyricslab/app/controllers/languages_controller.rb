@@ -3,6 +3,7 @@ class LanguagesController < ApplicationController
   def index
     @languages = Language.paginate(:page => params[:page], :per_page => 10, :order => "name asc")
     @count.nil? ? @count = 0 : @count = (params[:page].to_i - 1) * 10 
+    #render :layout => false
   end 
   
   def show
@@ -41,6 +42,10 @@ class LanguagesController < ApplicationController
    def destroy
     Language.find(params[:id]).destroy
     redirect_to :action => 'index'
+  end
+  
+  def add_translation
+    render :layout => false
   end
   
   def language_params

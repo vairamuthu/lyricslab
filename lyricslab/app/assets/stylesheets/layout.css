@@ -66,6 +66,12 @@ h5 {
     font-size: 1em;
     line-height: 0.9294872284em;
 }
+
+.modal.fade.in {
+    bottom: auto;
+    top: auto;
+}
+
 h6 {
     font-size: 1em;
     font-weight: bold;
