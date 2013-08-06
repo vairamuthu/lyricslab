@@ -29,10 +29,27 @@
 												</ul>
 												<div class="tab-content">
 												  <div class="tab-pane active" id="trans">
-												  	<div style="float: right; padding: 2px"><a data-toggle="modal" class="btn btn-info" href="/languages/8/add_translation" ><i class="icon-plus"> </i>Add Translation</a> 
-
-				</div>
-												  	</div>
+												  	<div style="float: right; padding: 2px"><a data-toggle="modal" class="btn btn-info" href="/languages/<%= @language.id%>/translations/new" ><i class="icon-plus"> </i>Add Translation</a> 
+														</div>
+													</div>
+													<table class="table table-striped table-bordered" id="trans_table">
+												<thead>
+													<th> S.No </th>
+													<th> Translation Language </th>
+													<th> Functions </th>
+												</thead>
+												<tbody>
+													<%if !@language.translations.blank?  %>
+													<% count = 0%>
+													<% @language.translations.each do |trans|%>
+													<%= render :partial => "translate", :locals => {:trans => trans}%>
+													<% end %>
+													<% else%>
+													
+													<% end%>
+												</tbody>
+												</table>
+												  	
 													  
 
 												</div>

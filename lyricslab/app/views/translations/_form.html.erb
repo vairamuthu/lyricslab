@@ -1,0 +1,10 @@
+  <%= f.hidden_field :language_id, :value => @language.id%>
+  <div class="control-group"><%= f.label :translation, :class => "control-label"%>
+  <div class="controls"><%= f.select :translate_id, @translations.collect{|t| [t.name, t.id]}, {}, {:class => "selectpicker"} %></div> </div>
+  <div class="control-group"><%= f.label :status, :class => "control-label"%>
+  <div class="controls"><%= f.select :status, [['Active', true],['InActive', false]], {}, {:class => "selectpicker"} %></div> </div>
+ 
+  
+  
+ 
+ 

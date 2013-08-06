@@ -1,4 +1,6 @@
 Lyricslab::Application.routes.draw do
+  get "translations/new"
+  get "translations/edit"
   #devise_for :users
   get "home/home"
   # The priority is based upon order of creation: first created -> highest priority.
@@ -20,10 +22,9 @@ Lyricslab::Application.routes.draw do
    resources :menus
    resources :roles
    resources :languages do
-     member do
-       get :add_translation
-     end
+     resources :translations
    end
+ 
   
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

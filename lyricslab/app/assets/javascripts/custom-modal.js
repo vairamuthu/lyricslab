@@ -14,7 +14,7 @@ $('[data-toggle="modal"]').click(function(e) {
 		
 		$.get(url, function(data) {			
 			jQuery.noConflict();
-			$('.modal-body').html(data)			
+			$('.modal').html(data)			
 			$('#mymodal').modal('show');
 			
 		});
