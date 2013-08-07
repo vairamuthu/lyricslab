@@ -42,7 +42,7 @@
 													<%if !@language.translations.blank?  %>
 													<% count = 0%>
 													<% @language.translations.each do |trans|%>
-													<%= render :partial => "translate", :locals => {:trans => trans}%>
+													<%= render :partial => "translations/translate", :locals => {:trans => trans}%>
 													<% end %>
 													<% else%>
 													

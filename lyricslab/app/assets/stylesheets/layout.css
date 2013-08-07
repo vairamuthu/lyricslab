@@ -69,7 +69,7 @@ h5 {
 
 .modal.fade.in {
     bottom: auto;
-    top: auto;
+    top: 50%;
 }
 
 h6 {

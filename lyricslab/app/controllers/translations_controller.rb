@@ -11,9 +11,11 @@ class TranslationsController < ApplicationController
     @translation = Translation.new(translation_params)
     if @translation.save
       respond_to do |format|
-        format.js  {render :layout => false }
+        format.js {render :template => "translations/create.js.erb"}
       end
+            #  render :partial=>"translations/create.js.erb"
     end
+   
   end
 
   def edit

@@ -1,1 +1,0 @@
-$('trans_table').append('<%escape_javascript(render partial :translate, :locals => {:translate => @translate})%>')
