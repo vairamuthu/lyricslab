@@ -4,6 +4,10 @@ class RolesController < ApplicationController
     @roles = Role.find(:all)
   end
   
+  def show
+    @role = Role.find(params[:id])
+  end
+  
   def new 
     @role = Role.new
   end

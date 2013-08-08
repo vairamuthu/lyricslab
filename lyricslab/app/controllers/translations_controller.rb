@@ -19,6 +19,20 @@ class TranslationsController < ApplicationController
   end
 
   def edit
+    @language = Language.find(params[:language_id])
+    @translations = Language.find(:all)
+    @translation = Translation.find(params[:id])
+    render :layout => false
+  end
+  
+  def update  
+      
+    @translation = Translation.find(params[:id])
+    if @translation.update_attributes(translation_params)      
+      respond_to do |format|
+        format.js {render :template => "translations/update.js.erb"}
+      end
+    end
   end
   
   def translation_params

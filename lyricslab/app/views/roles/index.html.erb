@@ -25,7 +25,8 @@
 														<tr>
 															<td><%= count +1%></td>
 															<td><%= role.name%></td>
-															<td><%= link_to raw("<i class=\"icon-edit\"> </i>Edit"), edit_role_path(role), :class => "firstLevel"%> | 
+															<td><%= link_to "Show", role_path(role), :class => "firstLevel"%> |
+																<%= link_to "Edit", edit_role_path(role), :class => "firstLevel"%> | 
 																<%= link_to raw("<i =\"icon-trash\"> </i>Delete"), role_path(role), :method => :delete , :confirm => "Are You Sure?", :class => "firstLevel"%>
 																</td>
 															  </tr>

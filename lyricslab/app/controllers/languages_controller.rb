@@ -27,6 +27,7 @@ class LanguagesController < ApplicationController
   
   def edit
     @language = Language.find(params[:id])
+    
   end
   
   def update

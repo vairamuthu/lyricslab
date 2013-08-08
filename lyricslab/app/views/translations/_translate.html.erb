@@ -1,5 +1,5 @@
-<tr id="trans_<%trans.id%>">
+<tr id="trans_<%=trans.id%>">
 	<td><%= @count %></td>
 	<td><%= trans.translate.name%></td>
-	<td></td>
+	<td> <a data-toggle="modal"  href="/languages/<%= @language.id%>/translations/<%= trans.id%>/edit" > Edit </a></td>
 </tr>
