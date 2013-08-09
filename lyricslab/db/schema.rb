@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130806062706) do
+ActiveRecord::Schema.define(version: 20130808154051) do
 
   create_table "admins", force: true do |t|
     t.datetime "created_at"
@@ -47,6 +47,16 @@ ActiveRecord::Schema.define(version: 20130806062706) do
 
   create_table "roles", force: true do |t|
     t.string   "name"
+    t.integer  "created_by"
+    t.integer  "updated_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "roles_menus", force: true do |t|
+    t.integer  "menu_id"
+    t.integer  "role_id"
+    t.string   "status",     default: "1"
     t.integer  "created_by"
     t.integer  "updated_by"
     t.datetime "created_at"

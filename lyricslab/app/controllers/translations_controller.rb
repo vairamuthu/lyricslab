@@ -9,6 +9,7 @@ class TranslationsController < ApplicationController
   
   def create
     @translation = Translation.new(translation_params)
+    @language= @translation.language
     if @translation.save
       respond_to do |format|
         format.js {render :template => "translations/create.js.erb"}
@@ -25,15 +26,26 @@ class TranslationsController < ApplicationController
     render :layout => false
   end
   
-  def update  
-      
+  def update     
     @translation = Translation.find(params[:id])
+    @language = @translation.language
     if @translation.update_attributes(translation_params)      
       respond_to do |format|
         format.js {render :template => "translations/update.js.erb"}
       end
     end
   end
+  
+    def destroy
+     @trans_id = params[:id]
+    @status = Translation.find(params[:id]).destroy
+    if status
+      respond_to do |format|
+        format.js {render :template => "translations/delete.js.erb"}
+      end
+    end
+  end
+  
   
   def translation_params
     params.require(:translation).permit(:language_id,:translate_id,:status)

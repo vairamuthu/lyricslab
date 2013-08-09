@@ -1,0 +1,10 @@
+  <%= f.hidden_field :role_id, :value => @role.id%>
+  <div class="control-group"><%= f.label :menu, :class => "control-label"%>
+  <div class="controls"><%= f.select :menu_id, @menus.collect{|t| [t.name, t.id]}, {}, {:class => "selectpicker"} %></div> </div>
+  <div class="control-group"><%= f.label :status, :class => "control-label"%>
+  <div class="controls"><%= f.select :status, [['Active', true],['InActive', false]], {}, {:class => "selectpicker"} %></div> </div>
+ 
+  
+  
+ 
+ 

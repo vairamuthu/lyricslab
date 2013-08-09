@@ -1,4 +1,4 @@
-alert('<%@translation.id%>')
+
 $('#trans_<%= @translation.id%>').replaceWith('<%=escape_javascript(render :partial =>'translations/translate', :locals => {:trans => @translation})%>').html_safe
 $('#mymodal').modal('hide')
 

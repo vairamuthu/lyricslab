@@ -1,0 +1,7 @@
+<tr id="trans_<%=roles_menu.id%>">
+	<td><%= @count %></td>
+	<td><%= roles_menu.menu.name%></td>
+	<td> <a data-toggle="modal"  href="/roles/<%= @role.id%>/roles_menus/<%= roles_menu.id%>/edit" > Edit </a> |
+		<%= link_to "Delete", role_roles_menu_path(@role,roles_menu), :method => :delete , :remote => true, :confirm => "Are You Sure?", :class => "firstLevel"%>
+	</td>
+</tr>

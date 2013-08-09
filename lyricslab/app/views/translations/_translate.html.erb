@@ -1,5 +1,7 @@
 <tr id="trans_<%=trans.id%>">
 	<td><%= @count %></td>
 	<td><%= trans.translate.name%></td>
-	<td> <a data-toggle="modal"  href="/languages/<%= @language.id%>/translations/<%= trans.id%>/edit" > Edit </a></td>
+	<td> <a data-toggle="modal"  href="/languages/<%= @language.id%>/translations/<%= trans.id%>/edit" > Edit </a> |
+		<%= link_to raw("<i =\"icon-trash\"> </i>Delete"), language_translation_path(@language,trans), :method => :delete , :remote => true, :confirm => "Are You Sure?", :class => "firstLevel"%>
+	</td>
 </tr>
