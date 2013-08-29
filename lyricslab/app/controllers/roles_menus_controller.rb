@@ -31,7 +31,8 @@ class RolesMenusController < ApplicationController
   def update     
     @roles_menu = RolesMenu.find(params[:id])
     @role = @roles_menu.role
-    if @roles_menu.update_attributes(roles_menus_params)      
+    @status = @roles_menu.update_attributes(roles_menus_params)
+    if @status      
       respond_to do |format|
         format.js {render :template => "roles_menus/update.js.erb"}
       end

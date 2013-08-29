@@ -1,4 +1,10 @@
-
+if (<%= @status %>){
 $('#trans_<%= @roles_menu.id%>').replaceWith('<%=escape_javascript(render :partial =>'roles_menus/roles_menu', :locals => {:roles_menu => @roles_menu})%>').html_safe
 $('#mymodal').modal('hide')
+}
+else
+{
+	$('#sub-alert').show()
+	$('#sub-alert').append('<% @roles_menu.errors.full_messages.each do |message|%>	<p><%= message %></p> 	<% end %>')
 
+}

@@ -26,7 +26,8 @@ Lyricslab::Application.routes.draw do
    resources :languages do
      resources :translations
    end
- 
+  resources :translation_types
+  resources :pricings
   
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

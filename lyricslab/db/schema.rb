@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130808154051) do
+ActiveRecord::Schema.define(version: 20130826181117) do
 
   create_table "admins", force: true do |t|
     t.datetime "created_at"
@@ -45,6 +45,16 @@ ActiveRecord::Schema.define(version: 20130808154051) do
     t.datetime "updated_at"
   end
 
+  create_table "pricings", force: true do |t|
+    t.integer  "translation_type_id"
+    t.integer  "words"
+    t.float    "amount"
+    t.integer  "created_by"
+    t.integer  "updated_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "roles", force: true do |t|
     t.string   "name"
     t.integer  "created_by"
@@ -66,6 +76,15 @@ ActiveRecord::Schema.define(version: 20130808154051) do
   create_table "roles_users", id: false, force: true do |t|
     t.integer  "role_id"
     t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "translation_types", force: true do |t|
+    t.string   "name"
+    t.boolean  "status"
+    t.integer  "created_by"
+    t.integer  "updated_by"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

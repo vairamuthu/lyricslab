@@ -1,0 +1,58 @@
+<section class="sliceTop"> 
+                    <div class="container">
+                        <div class="row">
+                            <div class="span12 drop-shadow lifted">
+								<div class="topQuote">
+									<div style="float: left">
+									<h1>
+									<strong>Pricings </strong>															
+									</h1></div>	
+                                
+                                </div>
+                                <div style="float: right; padding: 10px"><a class="btn btn-info" href="pricings/new"><i class="icon-plus"> </i>Add Pricing</a> </div>
+                                <div class="topBox clearfix">
+                                    <div class="bigIconsColumnsWrapper">
+										<article style="margin-left: auto;margin-right: auto;position: relative; padding-left: 30%;padding-right: 30%">
+											<table class="table table-striped table-bordered">
+												<thead>
+													<th> S.No </th>
+													<th> Name </th>	
+													<th> Words</th>
+													<th> Pricing</th>												
+													<th> Functions </th>
+												</thead>
+												<tbody>
+													<% if !@pricings.empty?%>
+													<% #count = 0%>
+													<% @pricings.each do |pricing|%>	
+														<tr>
+															<td><%= @count +1%></td>
+															<td><%= pricing.translation_type.name%></td>
+															<td> <%= pricing.words%></td>
+															<td> <%= pricing.amount%></td>															
+															<td><%= link_to raw("<i class=\"icon-edits\"> </i>Edit"), edit_pricing_path(pricing), :class => "firstLevel"%> | 
+																<%= link_to raw("<i =\"icon-trash\"> </i>Delete"), pricing_path(pricing), :method => :delete , :confirm => "Are You Sure?", :class => "firstLevel"%>
+																</td>															
+															  </tr>
+															  <%@count +=1 %>
+													<%end%>
+													<%else%>
+													<tr>
+														<td colspan="5"> No Records</td>
+													</tr>
+													<% end %>
+												</tbody>
+												</table>
+												<div class="apple_pagination">
+    <div class="page_info">
+      <%= page_entries_info @pricings %>
+    </div>
+    <%= will_paginate @pricings, :container => false %>
+  </div>
+                                        </article>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section> 

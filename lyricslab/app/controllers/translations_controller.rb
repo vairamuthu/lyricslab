@@ -10,7 +10,8 @@ class TranslationsController < ApplicationController
   def create
     @translation = Translation.new(translation_params)
     @language= @translation.language
-    if @translation.save
+    @status = @translation.save
+    if @status
       respond_to do |format|
         format.js {render :template => "translations/create.js.erb"}
       end
@@ -29,7 +30,8 @@ class TranslationsController < ApplicationController
   def update     
     @translation = Translation.find(params[:id])
     @language = @translation.language
-    if @translation.update_attributes(translation_params)      
+    @status = @translation.update_attributes(translation_params)   
+    if @status
       respond_to do |format|
         format.js {render :template => "translations/update.js.erb"}
       end

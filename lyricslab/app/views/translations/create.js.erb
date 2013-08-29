@@ -1,2 +1,9 @@
+if (<%= @status%>) {
 $('#trans_table').append('<%=escape_javascript(render :partial =>'translations/translate', :locals => {:trans => @translation})%>').html_safe
-$('#mymodal').modal('hide')
+$('#mymodal').modal('hide')}
+else
+{
+	$('#sub-alert').show()
+	$('#sub-alert').append('<% @translation.errors.full_messages.each do |message|%>	<p><%= message %></p> 	<% end %>')
+
+}
