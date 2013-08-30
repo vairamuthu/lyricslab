@@ -6,5 +6,13 @@ def flash_class(level)
     when :alert then "warning"
     end
   end
+  
+  
+  def admin_menus
+    Role.admin_menus
+  end
+  def user_menus(user)
+    User.menus
+  end
 
 end

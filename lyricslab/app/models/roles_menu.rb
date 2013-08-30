@@ -4,4 +4,6 @@ belongs_to :role
 
  validates :menu_id, :uniqueness=> { scope: :role_id,
     message: "Duplicate " }
+    
+ scope :active, :conditions=>{:status => true}
 end

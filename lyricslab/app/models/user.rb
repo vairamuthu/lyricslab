@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
          
   
   # attr_accessible :name, :email, :password, :password_confirmation, :remember_me
-  
+  has_one :translator
   def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
     
     data = access_token['info']
@@ -29,5 +29,15 @@ class User < ActiveRecord::Base
         user.email = data["email"]
       end
     end
-  end     
+  end  
+  
+ def user_menus
+   if self.translator
+     Role.find(:first, :conditions => {:name => "Translator"}).roles_menus.active
+   else
+     Role.find(:first, :conditions => {:name => "User"}).roles_menus.active
+   end
+ end
+  
+     
 end
