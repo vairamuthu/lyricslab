@@ -1,0 +1,19 @@
+  <%= f.hidden_field :user_id, :value => @user.id%>
+  <div class="control-group"><%= f.label :name, :class => "control-label"%>
+  <div class="controls"><%= f.text_field :name,:autofocus => true, :placeholder => "Name"%></div> </div>
+  <div class="control-group"><%= f.label :address, :class => "control-label"%>
+  <div class="controls"><%= f.text_area :address,:autofocus => true, :placeholder => "Address"%></div> </div>
+   <div class="control-group"><%= f.label :city, :class => "control-label"%>
+  <div class="controls"><%= f.text_field :city,:autofocus => true, :placeholder => "City"%></div> </div>
+  <div class="control-group"><%= f.label :state, :class => "control-label"%>
+  <div class="controls"><%= f.text_field :state,:autofocus => true, :placeholder => "State"%></div> </div>
+  <div class="control-group"><%= f.label :country, :class => "control-label"%>
+  <div class="controls"><%= f.text_field :country,:autofocus => true, :placeholder => "Country"%></div> </div>
+ <%= fields_for :translator_translation do |trans|%>
+ 	<div class="control-group"><%= trans.label :translation, :class => "control-label"%>
+ 	<div class="controls"><%= trans.select :translation_id, @translations.collect{|t| [t.language.name+" - "+t.translate.name, t.id]}, {}, {:class => "selectpicker"} %></div> </div>	
+ <% end %>
+  
+  
+   <div ><%= f.submit "Register", :class=>"btn"%></div>
+ 

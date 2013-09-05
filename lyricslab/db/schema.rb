@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130826181117) do
+ActiveRecord::Schema.define(version: 20130905152044) do
 
   create_table "admins", force: true do |t|
     t.datetime "created_at"
@@ -95,6 +95,26 @@ ActiveRecord::Schema.define(version: 20130826181117) do
     t.boolean  "status",       default: true
     t.integer  "created_by"
     t.integer  "updated_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "translator_translations", force: true do |t|
+    t.integer  "translator_id",                  null: false
+    t.integer  "translation_id",                 null: false
+    t.boolean  "is_approved",    default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "translators", force: true do |t|
+    t.string   "name",                        null: false
+    t.string   "address"
+    t.integer  "user_id",                     null: false
+    t.string   "city",                        null: false
+    t.string   "state",                       null: false
+    t.string   "country",                     null: false
+    t.boolean  "is_approved", default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
