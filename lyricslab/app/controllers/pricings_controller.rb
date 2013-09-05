@@ -5,8 +5,8 @@ class PricingsController < ApplicationController
     #render :layout => false
   end 
   
-  def show
-    @pricing = Pricing.find(params[:id])
+  def show_all
+    @pricings = Pricing.all    
   end
   
   def new
