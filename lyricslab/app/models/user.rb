@@ -35,7 +35,8 @@ class User < ActiveRecord::Base
    if self.translator
      Role.find(:first, :conditions => {:name => "Translator"}).roles_menus.active
    else
-     Role.find(:first, :conditions => {:name => "User"}).roles_menus.active
+     Role.find(:first, :conditions => {:name => "Customer"}).roles_menus
+#     raise  Role.find(:first, :conditions => {:name => "Customer"}).roles_menus.inspect
    end
  end
   
