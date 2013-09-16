@@ -31,7 +31,7 @@
 															<td><%= menu.url%></td>
 															<td><%=link_to "Click", "#{menu.url}"%></td>
 															<td><%= link_to raw("<i class=\"icon-edit\"> </i>Edit"), edit_menu_path(menu), :class => "firstLevel"%> | 
-																<%= link_to raw("<i =\"icon-trash\"> </i>Delete"), role_path(menu), :method => :delete , :confirm => "Are You Sure?", :class => "firstLevel"%>
+																<%= link_to raw("<i =\"icon-trash\"> </i>Delete"), menu_path(menu), :method => :delete , :confirm => "Are You Sure?", :class => "firstLevel"%>
 																</td>
 																
 															  </tr>
